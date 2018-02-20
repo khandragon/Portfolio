@@ -17,12 +17,9 @@ a:visited {
 }
 
 a:hover {
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
-a:hover ul:hover {
-  opacity: 1;
-}
 
 span{
   padding-right: 1%;
