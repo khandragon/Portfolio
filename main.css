@@ -9,7 +9,7 @@ footer,header,hgroup,menu,nav,section {
 body{
   margin: 0;
   min-height:10%;
-  min-width:20;
+  min-width:20%;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -28,6 +28,10 @@ a:hover {
   opacity: 0.1;
 }
 
+li.outer {
+  list-style: none;
+  display: inline-block;
+}
 
 span{
   padding-right: 1%;
@@ -35,7 +39,9 @@ span{
 }
 
 .heading{
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgb(0,0,0);
+    opacity:0.5;
+    filter: alpha(opacity=50);
     display: block;
     float: left;
     font-family: Georgia, "Times New Roman", Times, serif;
@@ -58,22 +64,26 @@ span{
   padding-top: 2%;
   padding-bottom: 2%;
   border-radius: 20px;
-  background-color: rgba(60, 62, 66,0.6);
+  background-color: rgb(60, 62, 66);
+  opacity:0.6;
+  filter: alpha(opacity=60);
   box-shadow: 5px 5px 18px black;
   font-weight: bold;
   display: inline-block;
 }
 .midtext{
   color: black;
+  font-size:40px;
   background-color: rgb(218, 222, 229);
   display: block;
   padding: 10%;
 }
 
-.endtext{
+.portfolio{
   color: black;
   background-color: rgb(234, 236, 239);
-  padding: 10%;
+  padding-left:10%;
+  padding-right: 5%;
   align:left;
 }
 
@@ -91,17 +101,18 @@ span{
   padding-top: 0.5em;
 }
 
-li.outer {
-  list-style: none;
-  display: inline-block;
-}
-
 #myImage{
-  height: 50%;
-  width: 50%;
-  float:right;
+  padding-top:3%;
+  padding-left:1%;
+  height: 10%;
+  width: 20%;
+  float: left;
+  clear:right;
 }
 
+#cvLevel{
+  float:left;
+}
 #footer{
   background:black;
   bottom:0;
@@ -123,8 +134,12 @@ li.outer {
   text-align: center;
   background-image: url(./images/computerImg.jpeg);
   background-size: cover;
-}
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+        src='./images/computerImg.jpeg',
+        sizingMethod='scale');
+    }
+
 #title{
-  font-size: 80px;
-  line-height: 100%;
+  font-size: 100px;
+  line-height: 80%;
 }
