@@ -13,7 +13,6 @@ a{
 }
 
 a:visited {
-    color: black;
     display: block;
 }
 
@@ -45,7 +44,7 @@ span{
 
 .columnText{
   padding-right:80%;
-  float:left;
+  display:inline;
 }
 
 .large{
@@ -68,8 +67,8 @@ span{
 .endtext{
   color: black;
   background-color: rgb(234, 236, 239);
-  display: block;
   padding: 10%;
+  align:left;
 }
 
 .top{
