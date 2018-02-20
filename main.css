@@ -1,7 +1,15 @@
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+   display:block;
+}
+
+
+
+
 body{
   margin: 0;
-
-
+  min-height:10%;
+  min-width:20;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
