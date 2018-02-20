@@ -40,7 +40,8 @@ span{
 }
 
 .columnText{
-  padding-right:80%;
+  width:50%;
+  float:left;
   display:inline;
 }
 
@@ -90,6 +91,7 @@ li.outer {
 #myImage{
   height: 50%;
   width: 50%;
+  float:right;
 }
 
 #footer{
