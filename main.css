@@ -58,7 +58,9 @@ div{
   padding:0;
   width:50%;
   float:left;
-  display:inline;
+  padding-left:10%;
+  padding-top: 7%;
+  clear:right;
 }
 
 .large{
@@ -85,6 +87,7 @@ div{
   color: black;
   background-color: rgb(234, 236, 239);
   padding-left:10%;
+  padding-bottom: 20%;
   padding-right: 5%;
   align:left;
 }
@@ -106,15 +109,13 @@ div{
 #myImage{
   padding-top:3%;
   padding-left:1%;
-  height: 10%;
-  width: 20%;
+  height: 15%;
+  width: 25%;
   float: left;
   clear:right;
 }
 
-#cvLevel{
-  float:left;
-}
+
 #footer{
   background:black;
   bottom:0;
@@ -144,4 +145,8 @@ div{
 #title{
   font-size: 100px;
   line-height: 80%;
+}
+
+#cvLevel{
+padding:5%;  
 }
