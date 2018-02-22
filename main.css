@@ -148,5 +148,9 @@ div{
 }
 
 #cvLevel{
-padding:5%;  
+padding:5%;
+}
+
+.linker{
+  color:black;
 }
