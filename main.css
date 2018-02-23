@@ -77,15 +77,15 @@ div{
 }
 .midtext{
   color: black;
+  background-color: rgb(184, 186, 188);
   font-size:40px;
-  background-color: rgb(218, 222, 229);
   display: block;
   padding: 10%;
 }
 
 .portfolio{
   color: black;
-  background-color: rgb(234, 236, 239);
+  background-color: rgb(218, 222, 229);
   padding-left:10%;
   padding-bottom: 20%;
   padding-right: 5%;
@@ -149,8 +149,13 @@ div{
 
 #cvLevel{
 padding:5%;
+background-color: rgb(234, 236, 239);
+
 }
 
+#refrenceLevel{
+  padding:5%;
+}
 .linker{
   color:black;
 }
