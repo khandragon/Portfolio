@@ -140,22 +140,16 @@ div{
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
         src='./images/otherComputer.jpeg',
         sizingMethod='scale');
-    }
+  }
 
-#title{
+#title {
   font-size: 100px;
   line-height: 80%;
 }
 
-#cvLevel{
-padding:5%;
-background-color: rgb(234, 236, 239);
-
-}
-
-#refrenceLevel{
-  padding:5%;
-}
-.linker{
-  color:black;
+#boxforimages {
+  width: 100%;
+  height: 500px;
+  border: double 5px;
+  background-color: rgb(210, 215, 221);
 }
