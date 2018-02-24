@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 function createDummyElements() {
   var semanticElements = [
     "article", "aside", "details", "figcaption", "figure",
@@ -9,3 +9,4 @@ function createDummyElements() {
   }
 }
 createDummyElements();
+ 
