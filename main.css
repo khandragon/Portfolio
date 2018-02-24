@@ -106,6 +106,10 @@ div{
   padding-top: 0.5em;
 }
 
+.linker{
+  color:black;
+}
+
 #myImage{
   padding-top:3%;
   padding-left:1%;
@@ -156,6 +160,18 @@ background-color: rgb(234, 236, 239);
 #refrenceLevel{
   padding:5%;
 }
-.linker{
-  color:black;
+
+#noJavascript{
+  background:black;
+  bottom:0;
+  color: white;
+  display:block;
+  height:15px;
+  padding-bottom: 11px;
+  padding-right: 100px;
+  padding-top: 8px;
+  position:fixed;
+  text-align: center;
+  width:100%;
+  z-index:4;
 }
