@@ -46,7 +46,8 @@ function changeSlider() {
     cvLvL2invisible();
   }
   if(g.slider.value === "3"){
-
+    cvLvL1visible();
+    cvLvL2visible();
   }
 }
 
@@ -81,7 +82,33 @@ function cvLvL1visible() {
 }
 
 function cvLvL2invisible() {
-
+  for (var i = 0; i < g.AcaLevel1.children.length; i++) {
+      invisible(g.AcaLevel1.children[i]);
+  }
+  for (var i = 0; i < g.AcaLevel2.children.length; i++) {
+      invisible(g.AcaLevel2.children[i]);
+  }
+  for (var i = 0; i < g.AcaLevel3.children.length; i++) {
+      invisible(g.AcaLevel3.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel1.children.length; i++) {
+      invisible(g.ExpLevel1.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel2.children.length; i++) {
+      invisible(g.ExpLevel2.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel3.children.length; i++) {
+      invisible(g.ExpLevel3.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel1.children.length; i++) {
+      invisible(g.ProLevel1.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel2.children.length; i++) {
+      invisible(g.ProLevel2.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel3.children.length; i++) {
+      invisible(g.ProLevel3.children[i]);
+  }
 
 
 
