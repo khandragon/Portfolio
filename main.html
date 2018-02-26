@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     <script src = "utilities.js"></script>
-    <script src = "demo.js"></script>
+    <script src = "main.js"></script>
     <style>
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 </style>
@@ -44,15 +44,11 @@
       </section>
       <section id="cvLevel">
         <h2><u>CV</u></h2>
-        <input type="range" min="1" max="3" step="1" list="ticks">
-        <datalist id="ticks">
-          <option value ="1" label="1">
-          <option value ="2" label="2">
-          <option value ="3" label="3">
-        </datalist>
+        <input type="range" min="1" max="3" step="1"
+         list="ticks" id="slider" defaultValue="1">
         <ul>
           <li>Academic
-            <ul>
+            <ul class="cvLvL1">
               <li>Dawson College
                 <ul>
                   <li>/College Diploma in computer science</li>
@@ -64,6 +60,7 @@
                   <li>Highschool diploma</li>
                   <li>Gradated in 2016</li>
                 </ul>
+              </li>
               <li>Réanimation cardiorespiratoire (RCR)
                 <ul>
                   <li>Recieved in 2014</li>
@@ -74,7 +71,7 @@
             </ul>
           </li>
           <li>Skills
-            <ul>
+            <ul class="cvLvL1">
               <li>Java</li>
               <li>C#</li>
               <li>Web Development</li>
@@ -84,7 +81,7 @@
             </ul>
           </li>
           <li>Experience
-            <ul>
+            <ul class="cvLvL1">
               <li>Surveyor</li>
               <ul>
                 <li>Work in a call center environment</li>
@@ -109,7 +106,7 @@
             </ul>
           </li>
           <li>Projects
-            <ul>
+            <ul class="cvLvL1">
               <li><a class="linker" href="https://giraffeduck.com/oz/">Ozwords</a>
                 <ul>
                   <li>Marihacks runner up</li>

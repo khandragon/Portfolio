@@ -1,24 +1,33 @@
-article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section {
-   display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
-body{
+body {
   margin: 0;
-  min-height:10%;
-  min-width:20%;
-    font-family: 'Roboto Condensed', sans-serif;
+  min-height: 10%;
+  min-width: 20%;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-a{
-    border-radius: 10px;
-    color: white;
-    padding: 20px;
-    text-decoration:none;
+a {
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
 }
 
 a:visited {
-    display: block;
+  display: block;
 }
 
 a:hover {
