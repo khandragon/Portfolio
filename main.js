@@ -22,7 +22,6 @@ function visible(e) {
 }
 
 function changeSlider() {
-  g.slider = U.$("slider");
   g.Academic = document.getElementsByClassName("cvLvL1")[0];
   g.AcaLevel1 = document.getElementsByClassName("cvLvL2")[0];
   g.AcaLevel2 = document.getElementsByClassName("cvLvL2")[1];
@@ -144,4 +143,24 @@ function cvLvL2visible() {
   }
 }
 
-document.addEventListener("DOMContentLoaded",changeSlider);
+function main() {
+  addSlider();
+  g.slider = U.$("slider");
+  console.log(g.slider.value);
+  g.slider.addEventListener("change",changeSlider);
+}
+
+function addSlider() {
+  var mySlide = document.createElement("input");
+  mySlide.setAttribute("type","range");
+  mySlide.setAttribute("min","1");
+  mySlide.setAttribute("max","3");
+  mySlide.setAttribute("step","1");
+  mySlide.setAttribute("step","1");
+  mySlide.setAttribute("id","slider");
+  mySlide.setAttribute("defaultValue","1");
+  var container = U.$("sliderContainer");
+  container.appendChild(mySlide);
+}
+
+document.addEventListener("DOMContentLoaded",main);
