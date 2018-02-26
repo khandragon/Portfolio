@@ -162,3 +162,28 @@ div{
   border: double 5px;
   background-color: rgb(210, 215, 221);
 }
+
+#boxforimages {
+  width: 100%;
+  height: 500px;
+  border: double 5px;
+  background-color: rgb(210, 215, 221);
+}
+
+#imageMap {
+width: 75%;
+padding-left:25%;
+padding-top:15%;
+height: 300px;
+background-color:yellow;
+  background-image: url(./images/typecircle.png);
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+#imageSpawn {
+  width:75%;
+  padding-left:25%;
+  padding-top:15%;
+  background-color: red;
+}

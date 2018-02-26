@@ -66,9 +66,7 @@ div {
 .columnText {
   margin: 0;
   padding: 0;
-  width: 50%;
-  float: left;
-  padding-left: 10%;
+  padding-left: 30%;
   padding-top: 7%;
   clear: right;
 }
@@ -98,7 +96,7 @@ div {
   color: black;
   background-color: rgb(218, 222, 229);
   padding-left: 10%;
-  padding-bottom: 20%;
+  padding-bottom: 14%;
   padding-right: 5%;
   align: left;
 }
@@ -122,7 +120,7 @@ div {
 }
 
 #myImage {
-  padding-top: 3%;
+  padding-top: 8%;
   padding-left: 1%;
   height: 15%;
   width: 25%;
@@ -185,4 +183,25 @@ div {
   text-align: center;
   width: 100%;
   z-index: 4;
+}
+
+@media (max-width: 420px) {
+  #myImage {
+    padding-top: 8%;
+    padding-left: 1%;
+    height: 15%;
+    width: 25%;
+    float: none;
+    display: block;
+  }
+
+  .columnText {
+    margin: 0;
+    padding: 0;
+    padding-left: 30%;
+    padding-top: 7%;
+    clear: right;
+    float:none;
+    display: block;
+  }
 }

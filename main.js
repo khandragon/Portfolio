@@ -148,19 +148,21 @@ function main() {
   g.slider = U.$("slider");
   console.log(g.slider.value);
   g.slider.addEventListener("change",changeSlider);
+  changeSlider();
 }
 
 function addSlider() {
   var mySlide = document.createElement("input");
-  mySlide.setAttribute("type","range");
-  mySlide.setAttribute("min","1");
-  mySlide.setAttribute("max","3");
-  mySlide.setAttribute("step","1");
-  mySlide.setAttribute("step","1");
-  mySlide.setAttribute("id","slider");
-  mySlide.setAttribute("defaultValue","1");
+  mySlide.setAttribute("type", "range");
+  mySlide.setAttribute("min", "1");
+  mySlide.setAttribute("max", "3");
+  mySlide.setAttribute("step", "1");
+  mySlide.setAttribute("value", "1");
+  mySlide.setAttribute("id", "slider");
   var container = U.$("sliderContainer");
   container.appendChild(mySlide);
 }
+
+
 
 document.addEventListener("DOMContentLoaded",main);
