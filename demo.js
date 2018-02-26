@@ -1,7 +1,6 @@
 "use strict";
 
 var gallery = {
-  "currentImg": 0,
   "imgFiles": [
     "./images/DragNDrop/bulba.png",
     "./images/DragNDrop/charmander.png",
@@ -25,7 +24,7 @@ function createDummyElements() {
 
 function spawning() {
   var myImage = document.createElement("img")
-  
+
 }
 
 createDummyElements();
