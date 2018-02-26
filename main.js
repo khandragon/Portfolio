@@ -13,30 +13,41 @@ createDummyElements();
 
 var g = {};
 
-function changeSlider() {
-  g.slider = U.$("slider");
-  g.Academic = document.getElementsByClassName("cvLvL1")[0];
-  g.Skills = document.getElementsByClassName("cvLvL1")[1];
-  g.Experience = document.getElementsByClassName("cvLvL1")[2];
-  g.Projects = document.getElementsByClassName("cvLvL1")[3];
-  console.log(g.slider);
-  if(g.slider.value==="1"){
-    cvLvL1invisible();
-  }
-  if(g.slider.value===2){
-    cvLvL2invisible();
-  }
-  if(g.slider.value===3){
-
-  }
-}
-
 function invisible(e) {
   e.style.display="none";
 }
 
 function visible(e) {
   e.style.display="";
+}
+
+function changeSlider() {
+  g.slider = U.$("slider");
+  g.Academic = document.getElementsByClassName("cvLvL1")[0];
+  g.AcaLevel1 = document.getElementsByClassName("cvLvL2")[0];
+  g.AcaLevel2 = document.getElementsByClassName("cvLvL2")[1];
+  g.AcaLevel3 = document.getElementsByClassName("cvLvL2")[2];
+  g.Skills = document.getElementsByClassName("cvLvL1")[1];
+  g.Experience = document.getElementsByClassName("cvLvL1")[2];
+  g.ExpLevel1 = document.getElementsByClassName("cvLvL2")[3];
+  g.ExpLevel2 = document.getElementsByClassName("cvLvL2")[4];
+  g.ExpLevel3 = document.getElementsByClassName("cvLvL2")[5];
+  g.Projects = document.getElementsByClassName("cvLvL1")[3];
+  g.ProLevel1 = document.getElementsByClassName("cvLvL2")[6];
+  g.ProLevel2 = document.getElementsByClassName("cvLvL2")[7];
+  g.ProLevel3 = document.getElementsByClassName("cvLvL2")[8];
+
+  console.log(g.slider);
+  if(g.slider.value === "1"){
+    cvLvL1invisible();
+  }
+  if(g.slider.value === "2"){
+    cvLvL1visible();
+    cvLvL2invisible();
+  }
+  if(g.slider.value === "3"){
+
+  }
 }
 
 function cvLvL1invisible() {
@@ -68,4 +79,42 @@ function cvLvL1visible() {
     visible(g.Projects.children[i])
   }
 }
+
+function cvLvL2invisible() {
+
+
+
+
+}
+
+function cvLvL2visible() {
+  for (var i = 0; i < g.AcaLevel1.children.length; i++) {
+      visible(g.AcaLevel1.children[i]);
+  }
+  for (var i = 0; i < g.AcaLevel2.children.length; i++) {
+      visible(g.AcaLevel2.children[i]);
+  }
+  for (var i = 0; i < g.AcaLevel3.children.length; i++) {
+      visible(g.AcaLevel3.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel1.children.length; i++) {
+      visible(g.ExpLevel1.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel2.children.length; i++) {
+      visible(g.ExpLevel2.children[i]);
+  }
+  for (var i = 0; i < g.ExpLevel3.children.length; i++) {
+      visible(g.ExpLevel3.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel1.children.length; i++) {
+      visible(g.ProLevel1.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel2.children.length; i++) {
+      visible(g.ProLevel2.children[i]);
+  }
+  for (var i = 0; i < g.ProLevel3.children.length; i++) {
+      visible(g.ProLevel3.children[i]);
+  }
+}
+
 document.addEventListener("DOMContentLoaded",changeSlider);
