@@ -22,10 +22,16 @@ function createDummyElements() {
     document.createElement(semanticElements[i]);
   }
 }
+
+function spawning() {
+  var myImage = document.createElement("img")
+  
+}
+
 createDummyElements();
 
 U.ready(main);
 
 function main() {
-
+  spawning();
 }
