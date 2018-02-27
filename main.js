@@ -114,32 +114,35 @@ function cvLvL2invisible() {
 }
 
 function cvLvL2visible() {
+  for (var i = 0; i < array.length; i++) {
+    array[i]
+  }
   for (var i = 0; i < g.AcaLevel1.children.length; i++) {
-      visible(g.AcaLevel1.children[i]);
+    visible(g.AcaLevel1.children[i]);
   }
   for (var i = 0; i < g.AcaLevel2.children.length; i++) {
-      visible(g.AcaLevel2.children[i]);
+    visible(g.AcaLevel2.children[i]);
   }
   for (var i = 0; i < g.AcaLevel3.children.length; i++) {
-      visible(g.AcaLevel3.children[i]);
+    visible(g.AcaLevel3.children[i]);
   }
   for (var i = 0; i < g.ExpLevel1.children.length; i++) {
-      visible(g.ExpLevel1.children[i]);
+    visible(g.ExpLevel1.children[i]);
   }
   for (var i = 0; i < g.ExpLevel2.children.length; i++) {
-      visible(g.ExpLevel2.children[i]);
+    visible(g.ExpLevel2.children[i]);
   }
   for (var i = 0; i < g.ExpLevel3.children.length; i++) {
-      visible(g.ExpLevel3.children[i]);
+    visible(g.ExpLevel3.children[i]);
   }
   for (var i = 0; i < g.ProLevel1.children.length; i++) {
-      visible(g.ProLevel1.children[i]);
+    visible(g.ProLevel1.children[i]);
   }
   for (var i = 0; i < g.ProLevel2.children.length; i++) {
-      visible(g.ProLevel2.children[i]);
+    visible(g.ProLevel2.children[i]);
   }
   for (var i = 0; i < g.ProLevel3.children.length; i++) {
-      visible(g.ProLevel3.children[i]);
+    visible(g.ProLevel3.children[i]);
   }
 }
 
@@ -147,7 +150,7 @@ function main() {
   addSlider();
   g.slider = U.$("slider");
   console.log(g.slider.value);
-  g.slider.addEventListener("change",changeSlider);
+  U.addHandler(g.slider, "change", changeSlider);
   changeSlider();
 }
 
@@ -165,4 +168,4 @@ function addSlider() {
 
 
 
-document.addEventListener("DOMContentLoaded",main);
+U.ready(main);
