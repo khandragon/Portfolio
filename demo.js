@@ -38,9 +38,6 @@ function spawning() {
   }
   return imgArray;
 }
-
-
-
 gallery.imageElements = spawning();
 
 createDummyElements();
@@ -101,4 +98,12 @@ function flip(e) {
       selectedObj.style.top = gallery.diffy + positioning.y + "px";
     }
   }
+
+function dropElement(e) {
+  var e = e || window.event;
+  var selectedObj = e.target;
+  U.removeHandler(selectedObj, "mousemove", dragElement);
+  U.removeHandler(document.body, "mouseup", dropElement);
+}
+
 }
