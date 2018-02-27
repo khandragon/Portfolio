@@ -1,13 +1,16 @@
 "use strict";
 
+
 var gallery = {
-  "imgFiles": [
-    "./images/DragNDrop/bulba.png",
-    "./images/DragNDrop/charmander.png",
-    "./images/DragNDrop/mankey.png",
-    "./images/DragNDrop/squirtle.png",
-    "./images/DragNDrop/umbreon.png",
-    "./images/DragNDrop/wobbuffet.png",
+    "imgFiles": [
+    "bulba.png",
+    "charmander.png",
+    "mankey.png",
+    "squirtle.png",
+    "umbreon.png",
+    "wobbuffet.png",
+    "gengar.png",
+    "eevee.png"
   ]
 };
 
@@ -23,14 +26,40 @@ function createDummyElements() {
 }
 
 function spawning() {
-  var myImage = document.createElement("img")
-
+  var imgArray= [];
+  for (var i = 0; i < gallery.imgFiles.length; i++) {
+    var myImage = document.createElement("img")
+    myImage.setAttribute("src", "./images/DragNDrop/"+gallery.imgFiles[i]);
+    myImage.setAttribute("alt", gallery.imgFiles[i].split(".")[0]);
+    myImage.setAttribute("id", gallery.imgFiles[i].split(".")[0]);
+    myImage.setAttribute("width", "10%");
+    myImage.setAttribute("height", "15%");
+    imgArray.push(myImage);
+  }
+  return imgArray;
 }
+
+function selected(e) {
+    var e = e || window.event;
+    var selectedObj = e.target.tagName
+}
+
+
+
+
+
+
+gallery.imageElements = spawning();
 
 createDummyElements();
 
 U.ready(main);
 
 function main() {
-  spawning();
+  var imgSection = U.$("imageSpawn");
+  for (var i = 0; i < gallery.imageElements.length; i++) {
+    imgSection.appendChild(gallery.imageElements[i]);
+  }
+  U.addHandler(imgSection, "mousedown",selected);
+  U.addHandler(imgSection, "dblclick",flip);
 }
