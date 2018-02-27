@@ -39,14 +39,6 @@ function spawning() {
   return imgArray;
 }
 
-function selected(e) {
-    var e = e || window.event;
-    var selectedObj = e.target.tagName
-}
-
-
-
-
 
 
 gallery.imageElements = spawning();
@@ -62,4 +54,51 @@ function main() {
   }
   U.addHandler(imgSection, "mousedown",selected);
   U.addHandler(imgSection, "dblclick",flip);
+}
+
+
+function selected(e) {
+    var e = e || window.event;
+    var selectedObj = e.target;
+
+    if(selectedObj.tagName.toLowerCase() === "img"){
+      for (var i = 0; i < gallery.imageElements.length; i++) {
+        gallery.imageElements[i].style.border="none";
+        gallery.imageElements[i].style.zIndex=0;
+      }
+      console.log("workin3");
+
+      gallery.diffx = selectedObj.offsetLeft-selectedObj.clientX;
+      gallery.diffy = selectedObj.offsetTop-selectedObj.clientY;
+      console.log("workin2");
+
+      selectedObj.style.border="2px solid green";
+      selectedObj.style.zIndex="2";
+
+      console.log("workin");
+      U.addHandler(selectedObj, "mousemove", dragElement);
+      U.addHandler(document.body, "mouseup", dropElement);
+    }
+
+function flip(e) {
+
+  }
+
+  function dragElement(e) {
+    var e = e || window.event;
+    var selectedObj = e.target
+    selectedObj.ondragstart = function(){
+      return false;
+    };
+
+    var positioning = {
+        x:selectedObj.clientX,
+        y:selectedObj.clientY
+    };
+
+    if (selectedObj.tagName.toLowerCase() === "img") {
+      selectedObj.style.left = gallery.diffx + positioning.x + "px";
+      selectedObj.style.top = gallery.diffy + positioning.y + "px";
+    }
+  }
 }
