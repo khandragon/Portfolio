@@ -1,0 +1,190 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  margin: 0;
+  min-height: 10%;
+  min-width: 20%;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+a {
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+}
+
+a:visited {
+  display: block;
+}
+
+a:hover {
+  opacity: 0.1;
+}
+
+li.outer {
+  list-style: none;
+  display: inline-block;
+}
+
+span{
+  padding-right: 1%;
+  padding-left: 1%;
+}
+div{
+  min-height:10%;
+}
+
+.menubar{
+    background-color: rgb(0,0,0);
+    opacity:0.5;
+    filter: alpha(opacity=50);
+    display: block;
+    float: left;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding-bottom: 2%;
+    padding-top:2%;
+    position: fixed;
+    text-align: right;
+    width: 100%;
+    z-index: 2;
+}
+
+.columnText{
+  margin: 0;
+  padding:0;
+  width:50%;
+  float:left;
+  padding-left:10%;
+  padding-top: 7%;
+  clear:right;
+}
+
+.large{
+  width: 200px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  border-radius: 20px;
+  background-color: rgb(60, 62, 66);
+  opacity:0.6;
+  filter: alpha(opacity=60);
+  box-shadow: 5px 5px 18px black;
+  font-weight: bold;
+  display: inline-block;
+}
+.midtext{
+  color: black;
+  background-color: rgb(184, 186, 188);
+  font-size:40px;
+  display: block;
+  padding: 10%;
+}
+
+.portfolio{
+  color: black;
+  background-color: rgb(218, 222, 229);
+  padding-left:10%;
+  padding-bottom: 20%;
+  padding-right: 5%;
+  align:left;
+}
+
+.top{
+  border-bottom:15px;
+  background-color: black;
+}
+
+.inside {
+  list-style: none;
+  display: none;
+  position: absolute;
+  text-align: center;
+  margin-left: -3.5em;
+  padding-top: 0.5em;
+}
+
+#myImage{
+  padding-top:3%;
+  padding-left:1%;
+  height: 15%;
+  width: 25%;
+  float: left;
+  clear:right;
+}
+
+
+#footer{
+  background:black;
+  bottom:0;
+  color: white;
+  display:block;
+  height:15px;
+  padding-bottom: 11px;
+  padding-right: 100px;
+  padding-top: 8px;
+  position:fixed;
+  text-align: center;
+  width:100%;
+  z-index:4;
+}
+
+#home{
+  padding-top: 20%;
+  padding-bottom: 10%;
+  text-align: center;
+  background-image: url(./images/otherComputer.jpeg);
+  background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(
+        src='./images/otherComputer.jpeg',
+        sizingMethod='scale');
+  }
+
+#title {
+  font-size: 100px;
+  line-height: 80%;
+}
+
+#boxforimages {
+  width: 100%;
+  height: 500px;
+  border: double 5px;
+  background-color: rgb(210, 215, 221);
+}
+
+#boxforimages {
+  width: 100%;
+  height: 500px;
+  border: double 5px;
+  background-color: rgb(210, 215, 221);
+  background-image: url(./images/typecircle.png);
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
+#imageMap {
+width: 75%;
+padding-left:25%;
+padding-top:15%;
+height: 300px;
+background-color:yellow;
+
+}
+
+#imageSpawn {
+  width:75%;
+  padding-left:25%;
+  padding-top:15%;
+  background-color: red;
+}
