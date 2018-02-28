@@ -15,6 +15,11 @@ var gallery = {
 
 var g = {};
 
+
+/**
+ * createDummyElements - creates sematic elements which are not supported by IE8
+ *
+ */
 function createDummyElements() {
   var semanticElements = [
     "article", "aside", "details", "figcaption", "figure",
@@ -25,11 +30,17 @@ function createDummyElements() {
   }
 }
 
+
+/**
+ * spawning - spawns preloaded images into the corner of the drag and drop box
+ *
+ * @return {array} returns array filled with images
+ */
 function spawning() {
   var imgArray = [];
   for (var i = 0; i < gallery.imgFiles.length; i++) {
     var myImage = document.createElement("img")
-    myImage.setAttribute("src", "./images/DragNDrop/"+gallery.imgFiles[i]);
+    myImage.setAttribute("src", "./images/DragNDrop/" + gallery.imgFiles[i]);
     myImage.setAttribute("alt", gallery.imgFiles[i].split(".")[0]);
     myImage.setAttribute("id", gallery.imgFiles[i].split(".")[0]);
     myImage.setAttribute("width", "200px");
@@ -49,6 +60,13 @@ if(!document.addEventListener){
 
 U.ready(main);
 
+
+/**
+ * main - select area and append the preloaded images otherComputer
+ *        then add handlers in case u click the image and if u double click in
+ *        the section
+ *
+ */
 function main() {
   var imgSection = U.$("boxforimages");
   for (var i = 0; i < gallery.imageElements.length; i++) {
@@ -60,6 +78,14 @@ function main() {
 }
 
 
+/**
+ * selected - if element is selected make sure all elements do not have border
+ *            then add border and change z index. Add handler for when the mouse
+ *            is up to activate drop.
+ *            *Bug tripple click image for permant select*
+ *
+ * @param  {Element} e
+ */
 function selected(e) {
   var e = e || window.event;
   var selectedObj = e.target || e.srcElement;
@@ -71,10 +97,8 @@ function selected(e) {
   if(selectedObj.src !== "undefined"){
     for (var i = 0; i < gallery.imageElements.length; i++) {
       gallery.imageElements[i].style.border = "none";
-      console.log(gallery.imageElements[i]+""+gallery.imageElements[i].style.border);
       gallery.imageElements[i].style.zIndex = 0;
     }
-console.log("--------------->");
     gallery.diffx = selectedObj.offsetLeft - e.clientX;
     gallery.diffy = selectedObj.offsetTop - e.clientY;
     selectedObj.style.border = "2px solid green";
@@ -84,6 +108,12 @@ console.log("--------------->");
   }
 }
 
+
+/**
+ * dragElement - drag the selected object to where you would like
+ *
+ * @param  {Element} e
+ */
 function dragElement(e) {
   var e = e || window.event;
   var selectedObj = g.selectedObj;
@@ -113,6 +143,12 @@ function dragElement(e) {
   }, 5);
 }
 
+
+/**
+ * dropElement - removes the handlers placed on the element
+ *
+ * @param  {Element} e
+ */
 function dropElement(e) {
   var e = e || window.event;
   var selectedObj = g.selectedObj;

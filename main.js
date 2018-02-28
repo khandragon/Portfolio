@@ -1,4 +1,9 @@
 "use strict";
+
+/**
+ * createDummyElements - creates sematic elements which are not supported by IE8
+ *
+ */
 function createDummyElements() {
   var semanticElements = [
     "article", "aside", "details", "figcaption", "figure",
@@ -15,14 +20,32 @@ if(!document.addEventListener){
 
 var g = {};
 
+
+/**
+ * invisible - make element invisible
+ *
+ * @param  {Element} e
+ */
 function invisible(e) {
   e.style.display = "none";
 }
 
+
+/**
+ * visible - make element visible
+ *
+ * @param  {type} e
+ */
 function visible(e) {
   e.style.display = "";
 }
 
+
+/**
+ * changeSlider - handels logic of what to display due to slider
+ *
+ * @return {type}  description
+ */
 function changeSlider() {
   g.Level1 = [];
   g.Level2 = [];
@@ -46,6 +69,11 @@ function changeSlider() {
   }
 }
 
+
+/**
+ * cvLvL1invisible - make lower and higher cv elements invisible
+ *
+ */
 function cvLvL1invisible() {
   for (var i = 0; i < g.Level1.length; i++) {
     for (var j = 0; j < g.Level1[i].children.length; j++) {
@@ -54,6 +82,11 @@ function cvLvL1invisible() {
   }
 }
 
+
+/**
+ * cvLvL1visible - make lower and higher cv elements visible
+ *
+ */
 function cvLvL1visible() {
   for (var i = 0; i < g.Level1.length; i++) {
     for (var j = 0; j < g.Level1[i].children.length; j++) {
@@ -62,6 +95,11 @@ function cvLvL1visible() {
   }
 }
 
+
+/**
+ * cvLvL2invisible - make lower cv elements invisible
+ *
+ */
 function cvLvL2invisible() {
   for (var i = 0; i < g.Level2.length; i++) {
     for (var j = 0; j < g.Level2[i].children.length; j++) {
@@ -70,6 +108,11 @@ function cvLvL2invisible() {
   }
 }
 
+
+/**
+ * cvLvL2visible - make lower cv elements visible
+ *
+ */
 function cvLvL2visible() {
   for (var i = 0; i < g.Level2.length; i++) {
     for (var j = 0; j < g.Level2[i].children.length; j++) {
@@ -78,14 +121,23 @@ function cvLvL2visible() {
   }
 }
 
+
+/**
+ * main - method that loads once dom is loaded
+ *
+ */
 function main() {
   addSlider();
   g.slider = U.$("slider");
   U.addHandler(g.slider, "change", changeSlider);
-  //g.slider.addEventListener("change",changeSlider);
   changeSlider();
 }
 
+
+/**
+ * addSlider - method to input slider in dom
+ *
+ */ 
 function addSlider() {
   var mySlide = document.createElement("input");
   mySlide.setAttribute("type", "range");
