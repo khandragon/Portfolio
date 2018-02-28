@@ -47,7 +47,7 @@ div{
   min-height:10%;
 }
 
-.heading{
+.menubar{
     background-color: rgb(0,0,0);
     opacity:0.5;
     filter: alpha(opacity=50);

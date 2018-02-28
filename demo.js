@@ -94,6 +94,7 @@ function dragElement(e) {
     y:e.clientY
   };
 
+  console.log("drag");
   selectedObj.style.zIndex = "3";
 
   setTimeout(function() {
@@ -107,6 +108,7 @@ function dropElement(e) {
   var selectedObj = e.target || e.srcElement;
   U.removeHandler(selectedObj, "mousemove", dragElement);
   U.removeHandler(document.body, "mouseup", dropElement);
+  console.log("drop");
 }
 
 function flip(e) {
@@ -128,13 +130,17 @@ function flip(e) {
       tails.style.position = selectedObj.style.position;
 
       selectedObj.parentElement.replaceChild(tails, selectedObj);
-
+      console.log("flip");
     } else {
 
       var nodelist = U.$("boxforimages").querySelectorAll("img");
-      //create loop
-      var arraylist[] = Array.prototype.slice.call(nodelist);
 
+      var arraylist= [];
+      for(var i = 0, n; n = nodelist[i]; ++i){
+        arraylist.push(n);
+      }
+
+      console.log(arraylist);
       var heads = document.createElement("img");
 
       var numberIndex = arraylist.indexOf(selectedObj);
@@ -147,6 +153,7 @@ function flip(e) {
       heads.setAttribute("width", "10%");
       heads.setAttribute("height", "33%");
       heads.style.position = selectedObj.style.position;
+      console.log("flip");
 
       selectedObj.parentElement.replaceChild(heads, selectedObj);
     }
