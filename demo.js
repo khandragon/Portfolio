@@ -26,7 +26,7 @@ function createDummyElements() {
 }
 
 function spawning() {
-  var imgArray= [];
+  var imgArray = [];
   for (var i = 0; i < gallery.imgFiles.length; i++) {
     var myImage = document.createElement("img")
     myImage.setAttribute("src", "./images/DragNDrop/"+gallery.imgFiles[i]);
@@ -36,7 +36,6 @@ function spawning() {
     myImage.setAttribute("height", "200px");
     myImage.style.position = "absolute";
     imgArray.push(myImage);
-    console.log(myImage.alt);
   }
   return imgArray;
 }
@@ -44,7 +43,9 @@ function spawning() {
 
 gallery.imageElements = spawning();
 
-createDummyElements();
+if(!document.addEventListener){
+  createDummyElements();
+}
 
 U.ready(main);
 
@@ -70,9 +71,10 @@ function selected(e) {
   if(selectedObj.src !== "undefined"){
     for (var i = 0; i < gallery.imageElements.length; i++) {
       gallery.imageElements[i].style.border = "none";
+      console.log(gallery.imageElements[i]+""+gallery.imageElements[i].style.border);
       gallery.imageElements[i].style.zIndex = 0;
     }
-
+console.log("--------------->");
     gallery.diffx = selectedObj.offsetLeft - e.clientX;
     gallery.diffy = selectedObj.offsetTop - e.clientY;
     selectedObj.style.border = "2px solid green";
@@ -103,7 +105,6 @@ function dragElement(e) {
     y:e.clientY
   };
 
-  console.log("drag");
   selectedObj.style.zIndex = "3";
 
   setTimeout(function() {
@@ -118,7 +119,6 @@ function dropElement(e) {
   U.removeHandler(selectedObj, "mousemove", dragElement);
   U.removeHandler(document.body, "mouseup", dropElement);
   g.selectedObj = null;
-  console.log("drop");
 }
 
 function flip(e) {
@@ -128,7 +128,7 @@ function flip(e) {
   if(selectedObj.id === "boxforimages"){
     return;
   }
-  
+
   if (selectedObj.src !== "undefined") {
     if (selectedObj.alt !== "back") {
 
@@ -137,26 +137,24 @@ function flip(e) {
       tails.setAttribute("alt", "back");
       tails.style.top = selectedObj.style.top;
       tails.style.left = selectedObj.style.left;
-      tails.setAttribute("width", "10%");
-      tails.setAttribute("height", "33%");
+      tails.setAttribute("width", "200px");
+      tails.setAttribute("height", "200px");
       tails.style.width = selectedObj.style.width;
       tails.style.position = selectedObj.style.position;
 
       selectedObj.parentElement.replaceChild(tails, selectedObj);
-      console.log("flip");
     } else {
 
       var nodelist = U.$("boxforimages").querySelectorAll("img");
 
       var arraylist = [];
-      for(var i = 0, n; n = nodelist[i]; ++i){
-        arraylist.push(n);
+      for(var i = 0; i < nodelist.length; i++){
+        arraylist.push(nodelist[i]);
       }
 
-      console.log(arraylist);
       var heads = document.createElement("img");
 
-      var numberIndex;// = arraylist.indexOf(selectedObj);
+      var numberIndex;
       for (var i = 0; i < arraylist.length; i++) {
         if (arraylist[i] === selectedObj) {
           numberIndex = i;
@@ -168,10 +166,9 @@ function flip(e) {
       heads.style.top = selectedObj.style.top;
       heads.style.left = selectedObj.style.left;
       heads.style.zIndex = selectedObj.style.zIndex;
-      heads.setAttribute("width", "10%");
-      heads.setAttribute("height", "33%");
+      heads.setAttribute("width", "200px");
+      heads.setAttribute("height", "200px");
       heads.style.position = selectedObj.style.position;
-      console.log("flip");
 
       selectedObj.parentElement.replaceChild(heads, selectedObj);
     }
