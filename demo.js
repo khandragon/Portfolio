@@ -63,17 +63,15 @@ function selected(e) {
 
     if(selectedObj.src !== "undefined"){
       for (var i = 0; i < gallery.imageElements.length; i++) {
-        console.log(gallery.imageElements[i].style.border);
         gallery.imageElements[i].style.border="none";
         gallery.imageElements[i].style.zIndex=0;
       }
+
       gallery.diffx = selectedObj.offsetLeft- e.clientX;
       gallery.diffy = selectedObj.offsetTop- e.clientY;
-
       selectedObj.style.border="2px solid green";
       selectedObj.style.zIndex="2";
 
-      console.log("workin");
       U.addHandler(selectedObj, "mousemove", dragElement);
       U.addHandler(document.body, "mouseup", dropElement);
     }
@@ -88,13 +86,12 @@ function flip(e) {
     var selectedObj = e.target;
 
     U.addHandler(selectedObj, "dragstart", function (e) {
-    if (e && e.preventDefault) {
-      e.preventDefault();
-    } else {
-      return false;
-    }
-  });
-
+      if (e && e.preventDefault) {
+        e.preventDefault();
+      } else {
+        return false;
+      }
+    });
 
     var positioning = {
         x:e.clientX,
@@ -102,6 +99,7 @@ function flip(e) {
     };
 
     selectedObj.style.zIndex = "3";
+
     setTimeout(function() {
         selectedObj.style.left = gallery.diffx + positioning.x + "px";
         selectedObj.style.top = gallery.diffy + positioning.y + "px";
@@ -134,6 +132,7 @@ function flip(e) {
       tails.style.position = selectedObj.style.position;
 
       selectedObj.parentElement.replaceChild(tails, selectedObj);
+
     } else {
 
       var nodelist = U.$("boxforimages").querySelectorAll("img");
