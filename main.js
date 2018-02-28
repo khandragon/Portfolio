@@ -9,26 +9,29 @@ function createDummyElements() {
   }
 }
 
-createDummyElements();
+if(!document.addEventListener){
+  createDummyElements();
+}
 
 var g = {};
 
 function invisible(e) {
-  e.style.display="none";
+  e.style.display = "none";
 }
 
 function visible(e) {
-  e.style.display="";
+  e.style.display = "";
 }
 
 function changeSlider() {
-  g.Level1=[];
-  g.Level2=[];
-  for (var i = 0; i < document.getElementsByClassName("cvLvL1").length; i++) {
-    g.Level1[i]=  document.getElementsByClassName("cvLvL1")[i];
+  g.Level1 = [];
+  g.Level2 = [];
+
+  for (var q = 0; q < document.getElementsByClassName("cvLvL1").length; q++) {
+    g.Level1[q] = document.getElementsByClassName("cvLvL1")[q];
   }
-  for (var i = 0; i < document.getElementsByClassName("cvLvL2").length; i++) {
-    g.Level2[i]=  document.getElementsByClassName("cvLvL2")[i];
+  for (var k = 0; k < document.getElementsByClassName("cvLvL2").length; k++) {
+    g.Level2[k] = document.getElementsByClassName("cvLvL2")[k];
   }
   if(g.slider.value === "1"){
     cvLvL1invisible();
@@ -78,7 +81,8 @@ function cvLvL2visible() {
 function main() {
   addSlider();
   g.slider = U.$("slider");
-  g.slider.addEventListener("change",changeSlider);
+  U.addHandler(g.slider, "change", changeSlider);
+  //g.slider.addEventListener("change",changeSlider);
   changeSlider();
 }
 

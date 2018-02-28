@@ -52,70 +52,66 @@ function main() {
   for (var i = 0; i < gallery.imageElements.length; i++) {
     imgSection.appendChild(gallery.imageElements[i]);
   }
-  U.addHandler(imgSection, "mousedown",selected);
-  U.addHandler(imgSection, "dblclick",flip);
+  U.addHandler(imgSection, "mousedown", selected);
+  U.addHandler(imgSection, "dblclick", flip);
 }
 
 
 function selected(e) {
-    var e = e || window.event;
-    var selectedObj = e.target;
+  var e = e || window.event;
+  var selectedObj = e.target || e.srcElement;
 
-    if(selectedObj.src !== "undefined"){
-      for (var i = 0; i < gallery.imageElements.length; i++) {
-        gallery.imageElements[i].style.border="none";
-        gallery.imageElements[i].style.zIndex=0;
-      }
-
-      gallery.diffx = selectedObj.offsetLeft- e.clientX;
-      gallery.diffy = selectedObj.offsetTop- e.clientY;
-      selectedObj.style.border="2px solid green";
-      selectedObj.style.zIndex="2";
-
-      U.addHandler(selectedObj, "mousemove", dragElement);
-      U.addHandler(document.body, "mouseup", dropElement);
+  if(selectedObj.src !== "undefined"){
+    for (var i = 0; i < gallery.imageElements.length; i++) {
+      gallery.imageElements[i].style.border = "none";
+      gallery.imageElements[i].style.zIndex = 0;
     }
+
+    gallery.diffx = selectedObj.offsetLeft - e.clientX;
+    gallery.diffy = selectedObj.offsetTop - e.clientY;
+    selectedObj.style.border = "2px solid green";
+    selectedObj.style.zIndex = "2";
+
+    U.addHandler(selectedObj, "mousemove", dragElement);
+    U.addHandler(document.body, "mouseup", dropElement);
   }
+}
 
-function flip(e) {
+function dragElement(e) {
+  var e = e || window.event;
+  var selectedObj = e.target || e.srcElement;
 
-  }
+  U.addHandler(selectedObj, "dragstart", function (e) {
+    if (e && e.preventDefault) {
+      e.preventDefault();
+    } else {
+      return false;
+    }
+  });
 
-  function dragElement(e) {
-    var e = e || window.event;
-    var selectedObj = e.target;
+  var positioning = {
+    x:e.clientX,
+    y:e.clientY
+  };
 
-    U.addHandler(selectedObj, "dragstart", function (e) {
-      if (e && e.preventDefault) {
-        e.preventDefault();
-      } else {
-        return false;
-      }
-    });
+  selectedObj.style.zIndex = "3";
 
-    var positioning = {
-        x:e.clientX,
-        y:e.clientY
-    };
-
-    selectedObj.style.zIndex = "3";
-
-    setTimeout(function() {
-        selectedObj.style.left = gallery.diffx + positioning.x + "px";
-        selectedObj.style.top = gallery.diffy + positioning.y + "px";
-    }, 5);
-  }
+  setTimeout(function() {
+    selectedObj.style.left = gallery.diffx + positioning.x + "px";
+    selectedObj.style.top = gallery.diffy + positioning.y + "px";
+  }, 5);
+}
 
 function dropElement(e) {
   var e = e || window.event;
-  var selectedObj = e.target;
+  var selectedObj = e.target || e.srcElement;
   U.removeHandler(selectedObj, "mousemove", dragElement);
-  U.removeHandler(document.body, "mouseup",dropElement);
+  U.removeHandler(document.body, "mouseup", dropElement);
 }
 
 function flip(e) {
-  var evt = e || window.event;
-  var selectedObj = evt.target;
+  var e = e || window.event;
+  var selectedObj = e.target || e.srcElement;
 
   if (selectedObj.src !== "undefined") {
 
@@ -126,8 +122,8 @@ function flip(e) {
       tails.setAttribute("alt", "back");
       tails.style.top = selectedObj.style.top;
       tails.style.left = selectedObj.style.left;
-      tails.setAttribute("width","10%");
-      tails.setAttribute("height","33%");
+      tails.setAttribute("width", "10%");
+      tails.setAttribute("height", "33%");
       tails.style.width = selectedObj.style.width;
       tails.style.position = selectedObj.style.position;
 
@@ -136,8 +132,8 @@ function flip(e) {
     } else {
 
       var nodelist = U.$("boxforimages").querySelectorAll("img");
-
-      var arraylist = Array.prototype.slice.call(nodelist);
+      //create loop
+      var arraylist[] = Array.prototype.slice.call(nodelist);
 
       var heads = document.createElement("img");
 
@@ -148,8 +144,8 @@ function flip(e) {
       heads.style.top = selectedObj.style.top;
       heads.style.left = selectedObj.style.left;
       heads.style.zIndex = selectedObj.style.zIndex;
-      heads.setAttribute("width","10%");
-      heads.setAttribute("height","33%");
+      heads.setAttribute("width", "10%");
+      heads.setAttribute("height", "33%");
       heads.style.position = selectedObj.style.position;
 
       selectedObj.parentElement.replaceChild(heads, selectedObj);
